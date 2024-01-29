@@ -1,12 +1,8 @@
+import Layout from "./features/components/Layout";
+
+Layout;
 function App() {
-  return (
-    <h1
-      className="bg-orange-500 font-semibold p-5 text-center text-3xl
-  "
-    >
-      This is my e-commerce project for FEE
-    </h1>
-  );
+  return <Layout />;
 }
 
 export default App;
