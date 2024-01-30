@@ -1,18 +1,14 @@
+import { Heart, ShoppingCart } from "lucide-react";
+
 const Navbar = () => {
   return (
-    <nav>
-      <ul className="flex space-x-2">
-        <li className="px-2 py-px border-[1px] border-black rounded hover:cursor-pointer hover:text-white text-sm">
-          TEST1
+    <nav className={` bg-cyan-500 `}>
+      <ul className="flex items-center space-x-2 sm:space-x-4 ">
+        <li className="px-2 py-px text-sm rounded hover:cursor-pointer hover:text-white">
+          <Heart size={32} strokeWidth={1} />
         </li>
-        <li className="px-2 py-px border-[1px] border-black rounded hover:cursor-pointer hover:text-white text-sm">
-          TEST2
-        </li>
-        <li className="px-2 py-px border-[1px] border-black rounded hover:cursor-pointer hover:text-white text-sm">
-          Wishlist
-        </li>
-        <li className="px-2 py-px border-[1px] border-black rounded hover:cursor-pointer hover:text-white text-sm">
-          Cart
+        <li className="px-2 py-px text-sm rounded hover:cursor-pointer hover:text-white">
+          <ShoppingCart size={36} strokeWidth={1} />
         </li>
       </ul>
     </nav>
