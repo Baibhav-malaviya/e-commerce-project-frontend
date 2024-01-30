@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
 import Main from "./Main";
@@ -7,7 +8,7 @@ const Layout = () => {
     <div className="flex flex-col w-screen h-screen bg-cyan-100">
       <Header />
       <Main>
-        <div>This is landing page</div>
+        <Outlet />
       </Main>
       <Footer />
     </div>
