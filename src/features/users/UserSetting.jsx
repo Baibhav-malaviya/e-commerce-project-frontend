@@ -1,5 +1,6 @@
 import { LogOut, ShoppingBasket, User } from "lucide-react";
 import { Link } from "react-router-dom";
+import { getUser, logout } from "../../Services/apiUser";
 
 function UserSetting({ isHidden }) {
   return (
@@ -23,13 +24,19 @@ function UserSetting({ isHidden }) {
             </span>
           </Link>
         </li>
-        <li className="flex items-center justify-center space-x-2 font-semibold">
+        <li className="flex items-center justify-center space-x-2 font-semibold" onClick={logout}>
           <Link to={"/orders"} className="flex w-full h-full space-x-2">
             <p>Logout</p>
             <span>
               <LogOut size={20} />
             </span>
           </Link>
+        </li>
+        <li className="flex items-center justify-center space-x-2 font-semibold" onClick={getUser}>
+          <p>Fetch</p>
+          <span>
+            <LogOut size={20} />
+          </span>
         </li>
       </ul>
     </div>

@@ -6,6 +6,8 @@ import Home from "./features/components/Home";
 import Wishlist from "./features/wishlist/Wishlist";
 import Order from "./features/orders/Order";
 import Account from "./features/users/Account";
+import SignIn from "./features/components/SignIn";
+import SignUp from "./features/components/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,16 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        children: [
+          {
+            path: "/signIn",
+            element: <SignIn />,
+          },
+          {
+            path: "/signUp",
+            element: <SignUp />,
+          },
+        ],
       },
       {
         path: "/products",
