@@ -8,6 +8,7 @@ import Order, { loader as orderLoader } from "./features/orders/Order";
 import Account, { loader as accountLoader } from "./features/users/Account";
 import SignIn from "./features/components/SignIn";
 import SignUp from "./features/components/SignUp";
+import ProductItem from "./features/products/ProductItem";
 
 const router = createBrowserRouter([
   {
@@ -32,8 +33,8 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/products",
-        element: <Product />,
+        path: "products/:productId",
+        element: <ProductItem />,
       },
       {
         path: "/cart",
