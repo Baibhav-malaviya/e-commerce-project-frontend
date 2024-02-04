@@ -1,9 +1,11 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigation } from "react-router-dom";
 import Item from "../components/Item";
 import { getCart } from "../../Services/apiCart";
+
 function Cart() {
   const carts = useLoaderData();
   console.log("THIS IS FROM CART PAGE: ", carts);
+
   return (
     <div className="my-10">
       {" "}

@@ -3,15 +3,9 @@ import Layout from "./features/components/Layout";
 import Product from "./features/products/Product";
 import Cart, { loader as cartLoader } from "./features/cart/Cart";
 import Home from "./features/components/Home";
-<<<<<<< HEAD
 import Wishlist, { loader as wishlistLoader } from "./features/wishlist/Wishlist";
 import Order, { loader as orderLoader } from "./features/orders/Order";
 import Account, { loader as accountLoader } from "./features/users/Account";
-=======
-import Wishlist from "./features/wishlist/Wishlist";
-import Order from "./features/orders/Order";
-import Account from "./features/users/Account";
->>>>>>> 29520a450404ef3f022db601ed82b70c6cc88807
 import SignIn from "./features/components/SignIn";
 import SignUp from "./features/components/SignUp";
 import ProductItem from "./features/products/ProductItem";

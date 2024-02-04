@@ -66,12 +66,12 @@ function ProductItem() {
               <span className="inline-block font-bold ">{formatName(name)}</span>
             </div>
 
-            <div className="text-xs italic capitalize text-stone-400">{description}</div>
+            <div className="text-xs italic font-semibold capitalize text-stone-400">{description}</div>
             <div className="">
               Price: <span className="font-bold">{formatCurrency(price)}</span>{" "}
               <span className="">
                 <span className="mx-2 font-semibold capitalize">off</span>
-                <span>(35%)</span>
+                <span className="text-xs">(35%)</span>
               </span>
             </div>
 
