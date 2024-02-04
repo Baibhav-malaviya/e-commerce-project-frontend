@@ -14,6 +14,9 @@ import Account from "./features/users/Account";
 >>>>>>> 29520a450404ef3f022db601ed82b70c6cc88807
 import SignIn from "./features/components/SignIn";
 import SignUp from "./features/components/SignUp";
+import ProductItem from "./features/products/ProductItem";
+import CreateOrder from "./features/orders/CreateOrder";
+import CurrentOrder from "./features/orders/CurrentOrder";
 
 const router = createBrowserRouter([
   {
@@ -38,8 +41,8 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/products",
-        element: <Product />,
+        path: "products/:productId",
+        element: <ProductItem />,
       },
       {
         path: "/cart",
@@ -55,6 +58,16 @@ const router = createBrowserRouter([
         path: "/orders",
         element: <Order />,
         loader: orderLoader,
+        children: [
+          {
+            path: "createOrder",
+            element: <CreateOrder />,
+          },
+          {
+            path: "currentOrder",
+            element: <CurrentOrder />,
+          },
+        ],
       },
       {
         path: "/user",

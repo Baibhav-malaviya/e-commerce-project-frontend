@@ -19,7 +19,7 @@ export async function addProduct(product) {
     console.log("Error in addProduct: ", error.message);
   }
 }
-export async function fetAllProducts() {
+export async function fetchAllProducts() {
   try {
     const response = await fetch(`${BASE_URL}/products`, {
       method: "GET",

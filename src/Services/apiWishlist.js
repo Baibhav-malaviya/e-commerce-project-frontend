@@ -8,7 +8,7 @@ export async function addToWishlist(quantity, id) {
         "Content-Type": "application/json",
       },
       credentials: "include",
-      body: JSON.stringify(quantity),
+      body: JSON.stringify({ quantity }),
     });
 
     const data = await response.json();

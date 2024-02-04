@@ -8,7 +8,7 @@ export async function addToCart(quantity, id) {
         "Content-Type": "application/json",
       },
       credentials: "include",
-      body: JSON.stringify(quantity),
+      body: JSON.stringify({ quantity }),
     });
     const data = await response.json();
     console.log(data);
