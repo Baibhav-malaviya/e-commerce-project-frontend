@@ -9,6 +9,8 @@ import Account, { loader as accountLoader } from "./features/users/Account";
 import SignIn from "./features/components/SignIn";
 import SignUp from "./features/components/SignUp";
 import ProductItem from "./features/products/ProductItem";
+import CreateOrder from "./features/orders/CreateOrder";
+import CurrentOrder from "./features/orders/CurrentOrder";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +52,16 @@ const router = createBrowserRouter([
         path: "/orders",
         element: <Order />,
         loader: orderLoader,
+        children: [
+          {
+            path: "createOrder",
+            element: <CreateOrder />,
+          },
+          {
+            path: "currentOrder",
+            element: <CurrentOrder />,
+          },
+        ],
       },
       {
         path: "/user",
