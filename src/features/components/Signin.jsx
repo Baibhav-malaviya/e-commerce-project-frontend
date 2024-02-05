@@ -3,13 +3,20 @@ import Button from "./Button";
 import { Link } from "react-router-dom";
 import { login } from "../../Services/apiUser";
 import { useState } from "react";
+import { getUser } from "../../Services/apiUser";
+import { setUserDetail } from "../users/userSlice";
+import { useDispatch } from "react-redux";
+
 function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    login(email, password);
+    await login(email, password);
+    const detail = await getUser();
+    dispatch(setUserDetail(detail.data));
   };
 
   return (

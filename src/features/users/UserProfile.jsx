@@ -1,16 +1,8 @@
 import { User } from "lucide-react";
-import { useEffect, useState } from "react";
-import { getUser } from "../../Services/apiUser";
+import { useSelector } from "react-redux";
 
 function UserProfile({ onClick }) {
-  const [userDetail, setUserDetail] = useState(null);
-
-  useEffect(() => {
-    (async function () {
-      const detail = await getUser();
-      setUserDetail(detail.data);
-    })();
-  }, []);
+  const userDetail = useSelector((state) => state.user);
 
   return (
     <div
