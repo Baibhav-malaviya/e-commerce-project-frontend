@@ -20,7 +20,7 @@ export async function addToCart(quantity, id) {
 
 export async function deleteFromCart(id) {
   try {
-    const response = await fetch(`${BASE_URL}/cart/${id}`, {
+    const response = await fetch(`${BASE_URL}/cart/remove/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
