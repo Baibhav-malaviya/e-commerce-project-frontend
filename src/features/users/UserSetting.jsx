@@ -25,7 +25,7 @@ function UserSetting({ isHidden }) {
           </Link>
         </li>
         <li className="flex items-center justify-center space-x-2 font-semibold" onClick={logout}>
-          <Link to={"/signin"} className="flex w-full h-full space-x-2">
+          <Link to={"/signIn"} className="flex w-full h-full space-x-2">
             <p>Logout</p>
             <span>
               <LogOut size={20} />
@@ -44,3 +44,5 @@ function UserSetting({ isHidden }) {
 }
 
 export default UserSetting;
+
+UserSetting.propTypes = { isHidden: Boolean };
