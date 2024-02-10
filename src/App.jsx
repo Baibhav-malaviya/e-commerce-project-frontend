@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./features/components/Layout";
 import Product from "./features/products/Product";
-import Cart, { loader as cartLoader } from "./features/cart/Cart";
+import Cart from "./features/cart/Cart";
 import Home from "./features/components/Home";
 import Wishlist, { loader as wishlistLoader } from "./features/wishlist/Wishlist";
 import Order, { loader as orderLoader } from "./features/orders/Order";
@@ -41,7 +41,6 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
-        loader: cartLoader,
       },
       {
         path: "/wishlist",

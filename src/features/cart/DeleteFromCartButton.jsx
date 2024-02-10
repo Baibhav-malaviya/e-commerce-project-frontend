@@ -1,14 +1,19 @@
 import { deleteFromCart } from "../../Services/apiCart";
+import { useSelector, useDispatch } from "react-redux";
+import { removeFromCart } from "./cartSlice";
 
 function DeleteFromCartButton({ children, type = "lg", productId, setIsLoading, className = "" }) {
+  const dispatch = useDispatch();
   const handleDeleteFromCart = async (e) => {
     e.preventDefault();
     setIsLoading(false);
     try {
       setIsLoading(true);
-      const addedItem = await deleteFromCart(productId);
+      const removedItem = await deleteFromCart(productId);
+      // addedItem.updatedCart.items
+      dispatch(removeFromCart(productId));
       setIsLoading(false);
-      console.log("Item added to cart: ", addedItem);
+      console.log("Item removed from cart: ", removedItem);
     } catch (error) {
       setIsLoading(false);
       console.log("Error in deleteFromCart: ", error.message);

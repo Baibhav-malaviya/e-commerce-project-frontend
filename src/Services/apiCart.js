@@ -29,7 +29,7 @@ export async function deleteFromCart(id) {
     });
     const data = await response.json();
     console.log(data);
-    return data?.data;
+    return data?.updatedCart;
   } catch (error) {
     console.log("Error in deleteFromCart: ", error.message);
   }

@@ -1,14 +1,25 @@
 import { Link, useLoaderData, useNavigation } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import Loader from "../components/Loader";
+import { useEffect } from "react";
 import Item from "../components/Item";
-import { getCart } from "../../Services/apiCart";
+import { fetchCartData } from "./cartSlice";
 
 function Cart() {
-  const carts = useLoaderData();
-  console.log("THIS IS FROM CART PAGE: ", carts);
+  const dispatch = useDispatch();
 
+  const { cartData, loading, error } = useSelector((state) => state.cart);
+
+  // console.log(cartData, "....", loading, "....", error);
+
+  useEffect(() => {
+    dispatch(fetchCartData());
+  }, [dispatch]);
+  // return <div>This is cart</div>;
+  if (loading === "loading") return <Loader />;
   return (
     <ul className="flex flex-col justify-around w-full gap-y-5 ">
-      {carts[0].items.map((item) => (
+      {cartData.map((item) => (
         <Item key={item._id} id={item._id} item={item} />
       ))}
     </ul>
@@ -16,7 +27,3 @@ function Cart() {
 }
 
 export default Cart;
-
-export const loader = () => {
-  return getCart();
-};
